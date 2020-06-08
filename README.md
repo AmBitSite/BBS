@@ -1,1 +1,1 @@
-# BBS
+# https://ambitsite.github.io/BBS/
