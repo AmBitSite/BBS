@@ -211,6 +211,11 @@ li {
     margin-right: 5%;
 }
 
+.m-left_10 {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .header__type-industry {
     font-size: 14px;
     line-height: 16px;
@@ -316,7 +321,7 @@ li {
 }
 
 .stages-slider {
-
+    overflow-y: hidden;
 }
 
 .stages-slider-wrap {
@@ -325,18 +330,34 @@ li {
     height: 100%;
     display: flex;
     justify-content: flex-start;
-    
 }
 
 .stages-slider-wrap__item {
     position: absolute;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-bottom: 80px;
     align-items: flex-end;
     width: 100%;
     height: 550px;
+    background-color: #fff;
+    animation: animationSlider1 .7s linear;
+}
+
+.stages-slider-wrap__item_active {
+    display: flex;
+}
+
+@keyframes animationSlider1 {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0%;
+        opacity: 1;
+    }
 }
 
 .stages-slider-wrap__item-img {
@@ -354,4 +375,172 @@ li {
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
+}
+
+.stages-slider-controls {
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+
+.stages-slider-controls__line-Block {
+    width: 100%;
+    background-color: #00000038;
+    height: 2px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.stages-slider-controls__line {
+    height: 2px;
+    display: flex;
+    background-color: #DB4023;
+    width: 0%;
+}
+
+@keyframes animationWidth {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.stages-slider-controls__points-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stages-slider-controls__point {
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 135%;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.stages-slider__point_active {
+    color: #000000;
+}
+
+.projects-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.projects__items {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.projects__items:nth-child(3n+3) {
+    margin-right: 0%;
+}
+
+.projects__items-img {
+    width: 371px;
+    height: 338px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 20px;
+}
+
+.projects__items-text {
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.p-left-0 {
+    padding-left: 0;
+}
+
+.contact-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #F4F4F4;
+    padding-top: 130px;
+    padding-bottom: 80px;
+}
+
+.form {
+    margin-right: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
+.form__input {
+    margin-bottom: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+    padding: 4px 8px;
+    width: 415px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+.form__input::placeholder{
+    color: #000;
+}
+.btn_submit {
+    color: #fff;
+    cursor: pointer;
+}
+.footer-content{
+    font-family: 'Raleway', sans-serif;
+    background-color: #000;
+    padding-top:60px;
+    padding-bottom:80px;
+    color: #fff;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.logo-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.copyRight{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+}
+.footer-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.footer-nav__item{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+.address-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }

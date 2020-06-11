@@ -13,5 +13,53 @@ if (sliderBtnNext) {
     }
     runSlider()
     runSlider()
-    setInterval(runSlider, 6000)
+    setInterval(runSlider, 10000)
+}
+var stagesSliderWrap = document.querySelector('.stages-slider-wrap')
+var stagesSliderLineProgress = document.querySelector('.stages-slider-controls__line')
+var stagesSliderBlockControl = document.querySelector('.stages-slider-controls__points-block')
+function stagesRunSlider() {
+    var arrSlide = document.getElementsByClassName('stages-slider-wrap__item')
+    var arrSliderPoint = document.getElementsByClassName('stages-slider-controls__point')
+    for (var count = 0; count < arrSlide.length; count++) {
+        if (arrSlide[count].classList.contains('stages-slider-wrap__item_active')) {
+            arrSlide[count].classList.remove('stages-slider-wrap__item_active')
+            arrSliderPoint[count].classList.remove('stages-slider__point_active')
+            var test = count
+            if ((++test) < arrSlide.length) {
+                var test2 = count + 1
+                arrSlide[test2].classList.add('stages-slider-wrap__item_active')
+                arrSliderPoint[test2].classList.add('stages-slider__point_active')
+            }
+            else {
+                arrSlide[0].classList.add('stages-slider-wrap__item_active')
+                arrSliderPoint[0].classList.add('stages-slider__point_active')
+            }
+            count = arrSlide.length
+        }
+    }
+}
+
+setInterval(stagesRunSlider, 10000)
+
+function changeSlide() {
+    if (this.getAttribute('data-index')) {
+        var arrSlide = document.getElementsByClassName('stages-slider-wrap__item')
+        var arrSliderPoint = document.getElementsByClassName('stages-slider-controls__point')
+        document.getElementsByClassName('stages-slider-wrap__item_active')[0].classList.remove('stages-slider-wrap__item_active')
+        document.getElementsByClassName('stages-slider__point_active')[0].classList.remove('stages-slider__point_active')
+        if ((this.getAttribute('data-index') - 2)===-1) {
+            arrSlide[arrSlide.length - 1].classList.add('stages-slider-wrap__item_active')
+            arrSliderPoint[arrSlide.length - 1].classList.add('stages-slider__point_active')
+            
+        }
+        else{
+            arrSlide[this.getAttribute('data-index') - 1].classList.add('stages-slider-wrap__item_active')
+            arrSliderPoint[this.getAttribute('data-index') - 1].classList.add('stages-slider__point_active')
+        }
+    }
+    stagesRunSlider
+}
+for (countPoint = 0; countPoint < stagesSliderBlockControl.children.length; countPoint++) {
+    stagesSliderBlockControl.children[countPoint].addEventListener('click', changeSlide)
 }
