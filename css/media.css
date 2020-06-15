@@ -1,0 +1,48 @@
+@media(max-width:1200px){
+    .m-left_10{
+        margin-right:0px
+    }
+    .form{
+        margin-right: 50px;
+    }
+}
+@media(max-width:1020px){
+    .container{
+        padding: 0 5%;
+    }
+    .m-horizontal_5{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .contact-content img{
+        display: none;
+    }
+    .slider-control{
+        display: none;
+    }
+    .header-content{
+        width: 100%;
+    }
+    .section{
+        padding-top:50px;
+    }
+    .about-us-content{
+        flex-direction: column;
+    }
+    .about-us-content__text{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .section__header{
+        width: 100%;
+        font-size: 40px;
+    }
+    .about-us-content__text:nth-last-child(1){
+        margin-bottom: 0px;
+    }
+    .services__item{
+        width: 100%;
+        margin-right: 0%;
+        margin-bottom: 30px;
+    }
+}
