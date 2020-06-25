@@ -49,13 +49,41 @@
 }
 
 @media(max-width:600px) {
-    .section {
-        width: 320px;
+    .nav-wrap{
+        display: none;
     }
-    .container {
-        width: 320px;
+    .section {
+        width: auto;
     }
     .sevices-content {
         width: 320px;
     }
+    .services__item {
+        height: 100%;
+    }
+    .stages-slider-wrap__item-img{
+        max-width: 100%;
+    }
+    .form__input{
+        width: 300px;
+    }
+    .footer-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .footer {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .address-block{
+        margin-bottom: 20px;
+    }
+    .footer-nav{
+        margin-bottom: 20px;
+    }
+    .contact-content{
+        margin-bottom: 20px;
+        padding: 20px 5%;
+    }
+    .nav-toggle{display: block;}
 }
