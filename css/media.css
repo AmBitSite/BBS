@@ -46,6 +46,9 @@
         margin-right: 0%;
         margin-bottom: 30px;
     }
+    .services__item:nth-last-child(2){
+        margin-bottom: 30px;
+    }
 }
 
 @media(max-width:600px) {
