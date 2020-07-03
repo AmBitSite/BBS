@@ -5,12 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/left-nav-style.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
-    <title>BBS</title>
+    <title>Balearic Building Services</title>
 </head>
 
 <body>
+    <input type="checkbox" id="nav-toggle" hidden>
+    <nav class="nav">
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+        <h2 class="logo">
+            <a href="index.html">Balearic Building Services</a>
+        </h2>
+        <ul>
+            <li><a href="index.html">Home</a>
+            <li><a href="gallery.html">Gallery</a>
+            <li><a href="#about">About us</a>
+            <li><a href="#contact">Contacts</a>
+            <li><a href="#">English</a>
+            <li><a href="#">Spanish</a>
+            <li><a href="#">German</a>
+        </ul>
+    </nav>
     <header class="header container">
         <div class="header-container">
             <div class="slider">
@@ -39,21 +56,22 @@
                 </div>
             </div>
             <div class="header-block">
-                <nav class="nav">
+                <nav class="nav-desktop">
                     <a href="/" class="logo">
                         <img src="img/logo.svg" alt="">
                     </a>
                     <ul class="nav-wrap">
-                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="#">Home</a></li>
-                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="#">Gallery</a></li>
-                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="#">About us</a></li>
-                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="#">Contacts</a></li>
+                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="index.html">Home</a></li>
+                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="#about">About us</a></li>
+                        <li class="nav-wrap__item"><a class="nav-wrap__link" href="#contact">Contacts</a></li>
                         <li class="nav-wrap__item">
                             <ul class="lang-wrap">
-                                <li class="lang-wrap__item"><a href="#" class="lang__link">EN</a></li>
-                                <li class="lang-wrap__item"><a href="#" class="lang__link">DE</a></li>
-                                <li class="lang-wrap__item"><a href="#" class="lang__link">ES</a></li>
-                                <li class="lang-wrap__item"><a href="#" class="lang__link">EN</a></li>
+                                <div class="lang-wrap-popUp">
+                                    <li class="lang-wrap__item"><a href="index.html" class="lang__link">EN</a></li>
+                                    <li class="lang-wrap__item"><a href="#" class="lang__link">DE</a></li>
+                                    <li class="lang-wrap__item"><a href="#" class="lang__link">ES</a></li>
+                                </div>
                             </ul>
                         </li>
                     </ul>
@@ -67,7 +85,7 @@
             </div>
         </div>
     </header>
-    <section class="section container">
+    <section id="about" class="section container">
         <div class="m-horizontal_5">
             <h2 class="section__header">About us</h2>
             <div class="about-us-content">
@@ -187,7 +205,7 @@
             </div>
         </div>
     </section>
-    <section class="section container p-left-0">
+    <section id="contact" class="section container p-left-0">
         <div class="contact-content container">
             <div class="m-left_10">
                 <h2 class="section__header">Contact us</h2>
@@ -206,16 +224,16 @@
     <footer class="footer-content">
         <div class="container footer">
             <div class="logo-block">
-                <a href="/" class="logo">
+                <a href="index.html" class="logo">
                     <img src="img/logo.svg" alt="">
                 </a>
                 <span class="copyRight">2020. All rights reserved</span>
             </div>
             <ul class="footer-nav">
-                <li class="footer-nav__item"><a href="#">Home</a></li>
-                <li class="footer-nav__item"><a href="#">Gallery</a></li>
-                <li class="footer-nav__item"><a href="#">About us</a></li>
-                <li class="footer-nav__item"><a href="#">Contact us</a></li>
+                <li class="footer-nav__item"><a href="index.html">Home</a></li>
+                <li class="footer-nav__item"><a href="gallery.html">Gallery</a></li>
+                <li class="footer-nav__item"><a href="#about">About us</a></li>
+                <li class="footer-nav__item"><a href="#contact">Contact us</a></li>
             </ul>
             <div class="address-block">
                 <span>BALEARIC BUILDING SERVICES</span>
@@ -224,6 +242,10 @@
             </div>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"
+        integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY"
+        crossorigin="anonymous"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

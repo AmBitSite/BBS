@@ -48,18 +48,57 @@ function changeSlide() {
         var arrSliderPoint = document.getElementsByClassName('stages-slider-controls__point')
         document.getElementsByClassName('stages-slider-wrap__item_active')[0].classList.remove('stages-slider-wrap__item_active')
         document.getElementsByClassName('stages-slider__point_active')[0].classList.remove('stages-slider__point_active')
-        if ((this.getAttribute('data-index') - 2)===-1) {
+        if ((this.getAttribute('data-index') - 2) === -1) {
             arrSlide[arrSlide.length - 1].classList.add('stages-slider-wrap__item_active')
             arrSliderPoint[arrSlide.length - 1].classList.add('stages-slider__point_active')
-            
+
         }
-        else{
+        else {
             arrSlide[this.getAttribute('data-index') - 1].classList.add('stages-slider-wrap__item_active')
             arrSliderPoint[this.getAttribute('data-index') - 1].classList.add('stages-slider__point_active')
         }
     }
     stagesRunSlider
 }
-for (countPoint = 0; countPoint < stagesSliderBlockControl.children.length; countPoint++) {
-    stagesSliderBlockControl.children[countPoint].addEventListener('click', changeSlide)
+if (stagesSliderBlockControl) {
+    for (countPoint = 0; countPoint < stagesSliderBlockControl.children.length; countPoint++) {
+        stagesSliderBlockControl.children[countPoint].addEventListener('click', changeSlide)
+    }
+}
+
+$(document).ready(function () {
+    $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+        }
+    });
+    $("body").on('click', '[href*="#"]', function (e) {
+        var fixed_offset = 100;
+        $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
+        e.preventDefault();
+    });
+})
+var galleryWrap = document.getElementsByClassName('gallery-wrap')[0]
+if (galleryWrap) {
+    function toggleVisibleElem() {
+        for (var count = 0; count < galleryWrap.children.length; count++) {
+            if (count > 3 && galleryWrap.children[count].classList.contains('popup-gallery')) {
+                galleryWrap.children[count].classList.toggle('hide-item')
+            }
+        }
+    }
+    toggleVisibleElem()
+    var btnShowMore = document.getElementsByClassName('show-more')[0]
+    btnShowMore.addEventListener('click', function () {
+        toggleVisibleElem()
+    })
 }

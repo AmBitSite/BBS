@@ -1,9 +1,25 @@
+@media(max-width:1600px) {
+    .popup-gallery-contain {
+        width: 420px;
+        display: flex;
+        position: relative;
+        height: 600px;
+        margin-right: auto;
+        margin-bottom: 100px;
+    }
+}
+
 @media(max-width:1200px) {
     .m-left_10 {
         margin-right: 0px
     }
     .form {
         margin-right: 50px;
+    }
+    .popup-gallery-contain {
+        width: 320px;
+        height: 500px;
+        margin-bottom: 50px;
     }
 }
 
@@ -46,10 +62,26 @@
         margin-right: 0%;
         margin-bottom: 30px;
     }
+    .popup-gallery-contain {
+        width: 280px;
+    }
+    .gallery__description{
+        width: 90%;
+    }
+}
+
+@media(max-width:650px) {
+    .popup-gallery-contain {
+        width: 280px;
+        margin-right: 0;
+    }
+    .popup-gallery-contain:nth-child(2n+2) {
+        transform: translateY(0px);
+    }
 }
 
 @media(max-width:600px) {
-    .nav-wrap{
+    .nav-wrap {
         display: none;
     }
     .section {
@@ -61,11 +93,11 @@
     .services__item {
         height: 100%;
     }
-    .stages-slider-wrap__item-img{
+    .stages-slider-wrap__item-img {
         max-width: 100%;
     }
-    .form__input{
-        width: 300px;
+    .form__input {
+        width: 240px;
     }
     .footer-content {
         padding-top: 20px;
@@ -75,15 +107,38 @@
         flex-direction: column-reverse;
         align-items: center;
     }
-    .address-block{
+    .address-block {
         margin-bottom: 20px;
     }
-    .footer-nav{
+    .footer-nav {
         margin-bottom: 20px;
     }
-    .contact-content{
+    .contact-content {
         margin-bottom: 20px;
         padding: 20px 5%;
     }
-    .nav-toggle{display: block;}
+    .nav-toggle {
+        display: block;
+    }
+    .header__main-caption {
+        font-size: 30px;
+    }
+    .nav-desktop {
+        justify-content: center;
+    }
+    .form {
+        margin-right: 0;
+    }
+    .m-left_10 {
+        margin-left: 0;
+    }
+    .stages-slider-wrap__item-img {
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+    }
+    .gallery-wrap{
+        justify-content: center;
+        align-items: center;
+    }
 }
