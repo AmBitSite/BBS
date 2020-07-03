@@ -102,3 +102,8 @@ if (galleryWrap) {
         toggleVisibleElem()
     })
 }
+var mobileNav = document.getElementById('mobile-nav')
+var mobileInputCheck = document.getElementById('nav-toggle')
+mobileNav.addEventListener('click', function(){
+    mobileInputCheck.checked = false
+})
